@@ -1,0 +1,119 @@
+{
+  "project_info": {
+    "project_number": "973526687262",
+    "firebase_url": "https://apk07-baa9b-default-rtdb.firebaseio.com",
+    "project_id": "apk07-baa9b",
+    "storage_bucket": "apk07-baa9b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:973526687262:android:a47371942606b6fc8cd80f",
+        "android_client_info": {
+          "package_name": "com.example.flutter_projek1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "973526687262-16g2ogtcimlbb5bv9fjchctbaphlj6uk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDz4A1-fivOJ_VlRfvowePeNUp4t6NrH7M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "973526687262-16g2ogtcimlbb5bv9fjchctbaphlj6uk.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "973526687262-72ogbru6u7bf3nhv1cteqcpmojshaeh1.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.tampilanSatu"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:973526687262:android:593bef76de1fcd3d8cd80f",
+        "android_client_info": {
+          "package_name": "com.example.pertama_login"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "973526687262-16g2ogtcimlbb5bv9fjchctbaphlj6uk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDz4A1-fivOJ_VlRfvowePeNUp4t6NrH7M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "973526687262-16g2ogtcimlbb5bv9fjchctbaphlj6uk.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "973526687262-72ogbru6u7bf3nhv1cteqcpmojshaeh1.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.tampilanSatu"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:973526687262:android:82adc3636ea873478cd80f",
+        "android_client_info": {
+          "package_name": "com.example.tampilan_satu"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "973526687262-16g2ogtcimlbb5bv9fjchctbaphlj6uk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDz4A1-fivOJ_VlRfvowePeNUp4t6NrH7M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "973526687262-16g2ogtcimlbb5bv9fjchctbaphlj6uk.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "973526687262-72ogbru6u7bf3nhv1cteqcpmojshaeh1.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.tampilanSatu"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
