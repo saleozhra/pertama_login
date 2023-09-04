@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pertama_login/contoh_beranda/hasil_cek.dart';
+import 'package:pertama_login/pages/booking.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -17,6 +18,9 @@ class _CheckboxPageState extends State<CheckboxPage> {
 
   bool laptopSelected = false;
   bool komputerSelected = false;
+  // NO
+   int currentIndex = 0;
+  List<dynamic> nomorAntrean = [];
 
   @override
   Widget build(BuildContext context) {
@@ -52,22 +56,22 @@ class _CheckboxPageState extends State<CheckboxPage> {
               ),
             ),
         
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (BuildContext context) => SecondPage(
-                      laptopSelected: laptopSelected,
-                      komputerSelected: komputerSelected, 
-                        value:_textController.text
+            // ElevatedButton(
+            //   onPressed: () {
+            //     Navigator.push(
+            //       context,
+            //       MaterialPageRoute(
+            //         builder: (BuildContext context) => SecondPage(
+            //           laptopSelected: laptopSelected,
+            //           komputerSelected: komputerSelected, 
+            //             value:_textController.text
                       
-                    ),
-                  ),
-                );
-              },
-              child: Text('Lanjutkan'),
-            ),
+            //         ),
+            //       ),
+            //     );
+            //   },
+            //   child: Text('Lanjutkan'),
+            // ),
           ],
         ),
       ),

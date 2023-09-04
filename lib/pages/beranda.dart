@@ -18,7 +18,7 @@ class _BerandaState extends State<Beranda> with SingleTickerProviderStateMixin {
   @override
   void initState() {
     // TODO: implement initState
-    controller = new TabController(vsync: this, length: 2);
+    controller =  TabController(vsync: this, length: 2);
     super.initState();
   }
 
@@ -35,35 +35,35 @@ class _BerandaState extends State<Beranda> with SingleTickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
+    return  Scaffold(
       appBar: AppBar(
         
         actions: [
           IconButton(
             onPressed: signUserOut, 
-            icon: Icon(Icons.logout))
+            icon: const Icon(Icons.logout))
         ],
-        leading:new Icon(Icons.home),
-        title: new Center(child: new Text('Kami Siap Melayani Anda '),),
+        leading: const Icon(Icons.home),
+        title:  const Center(child: Text('Kami Siap Melayani Anda '),),
         backgroundColor: Colors.blueGrey,
        
       ),
-      body: new TabBarView(
+      body:  TabBarView(
         controller: controller,
-        children: <Widget>[
-          new booking.Booking(),
-          new profile.Profile(), 
-          // new laptop.Laptop(),
+        children: const <Widget>[
+            booking.Booking(),
+            profile.Profile(), 
+          //  laptop.Laptop(),
           ],
       ),
 
-      bottomNavigationBar: new Material(
+      bottomNavigationBar:  Material(
         color: Colors.blueGrey,
-        child: new TabBar(
+        child:  TabBar(
         controller: controller,
-        tabs: <Widget>[
-          new Tab(icon: new Icon(Icons.message_outlined),text: 'Booking',),
-          new Tab(icon: new Icon(Icons.person),text: 'Profile',),
+        tabs: const <Widget>[
+           Tab(icon:  Icon(Icons.message_outlined),text: 'Booking',),
+           Tab(icon:  Icon(Icons.person),text: 'Profile',),
         ],
       ),    
       ),

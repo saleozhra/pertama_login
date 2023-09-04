@@ -8,14 +8,18 @@ class SecondPage extends StatelessWidget {
   final bool laptopSelected;
   final bool komputerSelected;
    var _textController=new  TextEditingController();
+    int currentIndex = 0;
+  List<dynamic> nomorAntrean = [];
 
   
 
-  SecondPage({
-    required this.laptopSelected,
+  SecondPage(    {Key? key, 
+    required this.currentIndex,
     required this.komputerSelected,
-    required this.value,
-  });
+    required this.value, 
+    required String nomorAntrean, required TextStyle style, 
+    required this.laptopSelected,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -44,8 +48,15 @@ class SecondPage extends StatelessWidget {
               ),
 
              
-              Text("${value }")
-                    // body: new Text("${widget.value }",
+              Text("${value }"),
+              Text('${currentIndex}')
+
+            // Text(
+            //         nomorAntrean.isNotEmpty
+            //             ? nomorAntrean[currentIndex]
+            //             : 'Tidak ada data',
+            //         style: TextStyle(fontSize: 24),
+            //       ),                    // body: new Text("${widget.value }",
 
           //     new ListTile(
                     

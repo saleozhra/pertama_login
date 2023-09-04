@@ -1,33 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:firebase_core/firebase_core.dart';
-import 'package:pertama_login/firebase_options.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:pertama_login/pages/beranda.dart';
 import 'package:pertama_login/pages/menu_signup.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Halaman Login',
-      theme: ThemeData(
-        primaryColor: Colors.grey,
-      ),
-      home: LoginPage(title: 'hdhdh'),
-      debugShowCheckedModeBanner: false,
-      routes: <String, WidgetBuilder>{
-        '/signup': (BuildContext context) => new SignupPage(),
-        // '/beranda':(BuildContext context) => new beranda.Home(),
-      },
-    );
-  }
-}
 
 class LoginPage extends StatefulWidget {
-  const LoginPage({Key? key, required this.title}) : super(key: key);
-  final String title;
+  const LoginPage({Key? key}) : super(key: key);
+  // final String title;
   @override
   State<LoginPage> createState() => _LoginPageState();
 }
@@ -65,10 +44,15 @@ class _LoginPageState extends State<LoginPage> {
             );
           },
         );
+        final share = await SharedPreferences.getInstance();
+        final emailLogin = share.setString('email', _userEmail);
+
+
         // onTap: (){
         //           Navigator.of(context).pushNamed('/signup');
         //         };
       });
+
     } else {
       setState(() {
         _success = 3;
@@ -83,43 +67,10 @@ class _LoginPageState extends State<LoginPage> {
       });
     }
 
-    // try{
-    // await FirebaseAuth.instance.signInWithEmailAndPassword(
-    //   email: emailController.text,
-    //   password: passwordController.text,
-    //   );
-    //   }on FirebaseAuthException catch(e){
-    // pop the loading   circle
-    // Navigator.pop(context);
-    //   if(e.code=='user-not-faund'){
-    //     emailSalah();
-    //     // print('object')
-    //   }
-    //   else if(e.code=='password salah'){
-    //     passwordSalah();
-    //   }
+
   }
 
-  // }
-  // void emailSalah(){
-  //   showDialog(
-  //     context: context,
-  //     builder: (context){
-  //       return const AlertDialog(
-  //         title: Text('Incorrect Email'),
-  //       );
-  //     },);
-  // }
-  //  void passwordSalah(){
-  //   showDialog(
-  //     context: context,
-  //     builder: (context){
-  //       return const AlertDialog(
-  //         title: Text('Incorrect Password'),
-  //       );
-  //     },);
-  // }
-
+ 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -133,9 +84,9 @@ class _LoginPageState extends State<LoginPage> {
                 child: Stack(
                   children: <Widget>[
                     Container(
-                      padding: EdgeInsets.fromLTRB(15, 30, 0, 0),
-                      margin: EdgeInsets.all(2),
-                      child: Text(
+                      padding: const EdgeInsets.fromLTRB(15, 30, 0, 0),
+                      margin: const EdgeInsets.all(2),
+                      child: const Text(
                         "Welcome",
                         style: TextStyle(
                             fontSize: 40, fontWeight: FontWeight.bold),
@@ -144,17 +95,12 @@ class _LoginPageState extends State<LoginPage> {
                   ],
                 ),
               ),
-              CircleAvatar(
+              const CircleAvatar(
                 radius: 80,
                 backgroundImage:
-                    AssetImage('assets/img/gambar.jpg'), // Gambar profil
+                    const AssetImage('assets/img/gambar.jpg'), // Gambar profil
               ),
-              //LOGO
-              // const Icon(
-              //   Icons.lock,
-              //   size: 100,
-
-              // ),
+             
               const SizedBox(height: 10),
 
               // welcome back you've been missed!
@@ -169,28 +115,28 @@ class _LoginPageState extends State<LoginPage> {
               const SizedBox(height: 15),
               // username textfield
               Container(
-                padding: EdgeInsets.only(top: 35, left: 20, right: 30),
+                padding: const EdgeInsets.only(top: 35, left: 20, right: 30),
                 child: Column(
                   children: <Widget>[
                     TextField(
                       controller: emailController,
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                         labelText: 'Email',
-                        labelStyle: TextStyle(
+                        labelStyle: const TextStyle(
                           fontFamily: 'Montserrat',
                           fontWeight: FontWeight.bold,
                           color: Colors.grey,
                         ),
                       ),
                     ),
-                    SizedBox(height: 20,
+                    const SizedBox(height: 20,
                     ),
                     // BAGIAN PASSWORD
                     TextField(
                       controller: passwordController,
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                         labelText: 'Password  ',
-                        labelStyle: TextStyle(
+                        labelStyle: const TextStyle(
                           fontFamily: 'Montserrat',
                           fontWeight: FontWeight.bold,
                           color: Colors.grey,
@@ -201,14 +147,14 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                       obscureText: true,
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 5,
                     ),
                     Container(
-                      alignment: Alignment(1, 0),
-                      padding: EdgeInsets.only(top: 15, left: 20),
-                      child: InkWell(
-                        child: Text(
+                      alignment: const Alignment(1, 0),
+                      padding: const EdgeInsets.only(top: 15, left: 20),
+                      child: const InkWell(
+                        child: const Text(
                           'Forgot Password',
                           style: TextStyle(
                               color: Colors.black,
@@ -222,17 +168,7 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ),
               const SizedBox(height: 15),
-              // button\
-              // MyBotton(
-              //   onTap:signUserIn,
-              //   buttonText:'Sign In'
-
-              // ),
-              // MyButton(
-              //   onTap:signUserIn,
-              //   buttonText:'Sign In',
-
-              // ),
+       
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 25.0),
                 child: Row(
@@ -248,7 +184,7 @@ class _LoginPageState extends State<LoginPage> {
                           onPrimary: Colors.white, // Warna teks pada tombol
                         ),
                         // Navigator.pushNamed(context,'/beranda
-                        child: Text('LOGIN'))
+                        child: const Text('LOGIN'))
                   ],
                 ),
               ),
@@ -297,9 +233,10 @@ class _LoginPageState extends State<LoginPage> {
                   InkWell(
                     // akan mengarahkan ke bagian signup
                     onTap: () {
-                      Navigator.of(context).pushNamed('/signup');
+                       Navigator.of(context).push(MaterialPageRoute(builder: (context) => const SignupPage()));
+
                     },
-                    child: Text(
+                    child: const Text(
                       'Register',
                       style: TextStyle(
                           color: Colors.blueGrey,

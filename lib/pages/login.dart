@@ -20,7 +20,7 @@ class MenuLogin extends StatelessWidget {
           }
           // USER IS NOT LOGGEN
           else{
-            return MyApp();
+            return const LoginPage();
             
           }
         },
